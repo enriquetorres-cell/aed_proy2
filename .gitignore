@@ -1,0 +1,19 @@
+# C++
+build/
+cmake-build-*/
+*.exe
+*.o
+
+# Trazas generadas por el programa en C++
+trazas/
+
+# Manim
+media/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editores
+.vscode/
+.idea/

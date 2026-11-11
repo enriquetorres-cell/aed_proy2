@@ -1,0 +1,13 @@
+# Caso borde: arista de peso 0 y un nodo inalcanzable.
+# - 0 -> 1 con peso 0: el nodo 1 entra al MISMO bucket que se esta procesando.
+# - el nodo 3 solo tiene aristas salientes: queda con distancia infinita.
+4 4 0
+0 1 0
+1 2 2
+0 2 3
+3 0 1
+pos
+0 0
+2 1.2
+4 0
+2 -1.4
