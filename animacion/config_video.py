@@ -6,7 +6,7 @@ CURSO = "CS2023 - Algoritmos y Estructuras de Datos  |  UTEC 2026-2"
 PROFESOR = "Prof. Víctor Racsó Galván Oyola"
 
 INTEGRANTES = [
-    "Enrique Torres",
-    "Rafael Choque",
-    "Paul Maguiña",
+    "Choque Coaquira, Rafael Rodrigo",
+    "Maguiña Quispe, Paul Ricardo",
+    "Torres Chafloque, Enrique Eusebio",
 ]

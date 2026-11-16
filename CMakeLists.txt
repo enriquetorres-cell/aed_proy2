@@ -25,3 +25,7 @@ enable_testing()
 add_executable(test_dial tests/test_dial.cpp)
 target_link_libraries(test_dial PRIVATE dial_core)
 add_test(NAME test_dial COMMAND test_dial)
+
+# Comparacion empirica Dial vs Dijkstra (no es una prueba, se ejecuta a mano)
+add_executable(benchmark tests/benchmark.cpp)
+target_link_libraries(benchmark PRIVATE dial_core)

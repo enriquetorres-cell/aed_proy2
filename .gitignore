@@ -17,3 +17,6 @@ venv/
 # Editores
 .vscode/
 .idea/
+
+# Video renderizado (se entrega aparte)
+video/

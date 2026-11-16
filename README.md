@@ -3,10 +3,12 @@
 **CS2023 - Algoritmos y Estructuras de Datos (UTEC 2026-2)** · Proyecto Final 2
 Prof. Víctor Racsó Galván Oyola
 
-Integrantes:
-- Enrique Torres
-- Rafael Choque
-- Paul Maguiña
+Integrantes (Sección 3):
+- Choque Coaquira, Rafael Rodrigo
+- Maguiña Quispe, Paul Ricardo
+- Torres Chafloque, Enrique Eusebio
+
+📹 **Video:** _(pegar aquí el enlace al video)_ · 📄 **Informe:** `informe/Informe_Algoritmo_de_Dial.pdf`
 
 Video educativo, estilo 3Blue1Brown/Manim, que explica el **algoritmo de Dial**:
 caminos mínimos desde un origen en grafos dirigidos con pesos enteros en `[0, C]`,
@@ -40,6 +42,7 @@ data/*.txt ──► build/dial (C++17) ──► trazas/*.json ──► animac
 | `src/tracer.*` | Exporta la traza de ejecución a JSON |
 | `src/main.cpp` | CLI: `dial <grafo.txt> [traza.json]` |
 | `tests/test_dial.cpp` | Pruebas: Dial vs Bellman-Ford en 500 grafos aleatorios + casos borde |
+| `tests/benchmark.cpp` | Comparación empírica de tiempos: Dial vs Dijkstra (heap binario) variando C |
 | `data/ejemplo.txt` | Instancia ilustrativa del video (6 nodos, C = 4) |
 | `data/borde.txt` | Caso borde: arista de peso 0 y nodo inalcanzable |
 | `animacion/graph_view.py`, `bucket_view.py` | Dibujo del grafo y de los buckets |
@@ -101,6 +104,18 @@ animarlos cambiando el nombre en `cargar_traza("...")`.
 - Cada relajación inserta/quita un nodo de un bucket en O(1) → **O(|E|)**.
 - El puntero solo avanza y llega a lo más a la distancia máxima ≤ C·(|V|−1) → **O(C·|V|)**.
 - Total **O(|E| + C·|V|)** de tiempo y **O(|V| + C)** de memoria extra (buckets circulares).
+
+Comparación empírica (`./build/benchmark`, |V| = 100 000, |E| = 500 000, mismo grafo, mejor de 3):
+
+| C | Dial (ms) | Dijkstra (ms) | Avances del puntero |
+|---:|---:|---:|---:|
+| 1 | 45.2 | 59.9 | 3 |
+| 100 | 46.5 | 58.5 | 398 |
+| 10 000 | 48.4 | 63.7 | 38 453 |
+| 1 000 000 | 71.5 | 58.9 | 4 004 011 |
+
+Con C pequeño Dial gana; cuando C crece, el puntero recorre millones de buckets vacíos y Dijkstra pasa adelante.
+(Los tiempos dependen de la máquina; las distancias de ambos algoritmos coinciden en todos los casos.)
 
 ## Referencias
 

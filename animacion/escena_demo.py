@@ -134,10 +134,15 @@ def demo_dial(scene, traza, titulo="Demostración: ejecución del algoritmo", rt
 
     # Resumen final: en azul queda el arbol de caminos minimos.
     dist = traza.result["dist"]
+    # Va a la derecha de los buckets para no tapar el grafo ni los buckets.
     resumen = texto("dist = [" + ", ".join(fmt_dist(d) for d in dist) + "]", 26,
-                    color=C_FINAL).next_to(grafo, DOWN, buff=0.05).align_to(grafo, LEFT)
-    nota = texto("en azul: árbol de caminos mínimos", 20, color=C_ARBOL).next_to(
-        resumen, RIGHT, buff=0.4)
+                    color=C_FINAL)
+    nota = texto("en azul: árbol de caminos mínimos", 20, color=C_ARBOL)
+    bloque = VGroup(resumen, nota).arrange(DOWN, aligned_edge=LEFT, buff=0.12)
+    ancho_libre = 6.9 - buckets.cajas.get_right()[0] - 0.3
+    if bloque.width > ancho_libre:
+        bloque.scale_to_fit_width(ancho_libre)
+    bloque.next_to(buckets.cajas, RIGHT, buff=0.3)
     scene.play(FadeIn(resumen), FadeIn(nota), run_time=0.8 * rt)
     scene.wait(2 * rt)
 
