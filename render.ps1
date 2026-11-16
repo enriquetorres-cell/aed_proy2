@@ -1,6 +1,6 @@
 # Compila el C++, corre las pruebas y genera el video final en video/AlgoritmoDeDial.mp4
 # Uso (PowerShell, desde la raiz del repo):  .\render.ps1        (alta calidad 1080p60)
-#                                            .\render.ps1 -Rapido (480p15, para probar)
+
 param([switch]$Rapido)
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
