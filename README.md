@@ -8,7 +8,7 @@ Integrantes (Sección 3):
 - Maguiña Quispe, Paul Ricardo
 - Torres Chafloque, Enrique Eusebio
 
-📹 **Video:** _(pegar aquí el enlace al video)_ · 📄 **Informe:** `informe/Informe_Algoritmo_de_Dial.pdf`
+📹 **Video:** https://youtu.be/fzNbNYVKbio · 📄 **Informe:** `informe/Informe_Algoritmo_de_Dial.pdf`
 
 Video educativo, estilo 3Blue1Brown/Manim, que explica el **algoritmo de Dial**:
 caminos mínimos desde un origen en grafos dirigidos con pesos enteros en `[0, C]`,
